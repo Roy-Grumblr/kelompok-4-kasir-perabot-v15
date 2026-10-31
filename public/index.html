@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d4a3e">
+<meta name="description" content="Toko perabotan rumah tangga: furnitur, perlengkapan dapur, kamar mandi, lampu, dan dekorasi.">
+<meta name="referrer" content="same-origin">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kasir Perabot">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Toko Perabotan POS v15</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HALAMAN AWAL (bisa dilihat pengunjung, hanya baca) ================= -->
+<div id="auth">
+  <div class="strip"><div class="wrap strip-in"><span id="lJam"></span><a id="lTelp" href="#" target="_blank" rel="noopener noreferrer"></a></div></div>
+
+  <header class="lhead" id="lHead"><div class="wrap lhead-in">
+    <a class="brand" href="#top"><i id="lMark"></i><span id="lName"></span></a>
+    <form class="lsearch" data-sub="lSearch">
+      <input id="lq" type="search" placeholder="Cari kursi, lemari, kasur, ember..." autocomplete="off" data-in="lFilter" aria-label="Cari produk" maxlength="60">
+      <button>Cari</button>
+    </form>
+    <div class="lactions"><button class="btn or" id="hLogin" data-do="openAuth">Masuk</button></div>
+  </div></header>
+
+  <div class="wrap lcats" id="lCats"></div>
+
+  <section class="wrap hero2" id="top">
+    <div class="hcard" id="hcard">
+      <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+      <div class="hart" aria-hidden="true">
+        <div class="px" style="--z:20;top:12%;right:14%"><span class="big">🛋️</span></div>
+        <div class="px p2" style="--z:34;top:50%;right:34%"><span class="big s2">🛏️</span></div>
+        <div class="px c1" style="--z:26;top:6%;right:46%"><span class="chipx" style="--t:7s">🪑 Furnitur</span></div>
+        <div class="px p3 c2" style="--z:30;top:44%;right:4%"><span class="chipx" style="--t:8.5s;--dl:-2s">💡 Lampu</span></div>
+        <div class="px c3" style="--z:18;top:72%;right:30%"><span class="chipx" style="--t:6.5s;--dl:-4s">🪴 Dekorasi</span></div>
+        <div class="px c4" style="--z:24;top:80%;right:6%"><span class="chipx" style="--t:9s;--dl:-1s">🍳 Dapur</span></div>
+      </div>
+      <div class="htxt">
+        <span class="pill ru" style="--i:0">PUSAT PERABOTAN RUMAH</span>
+        <h1><span class="w ru" style="--i:1">Semua</span> <span class="w ru" style="--i:2">kebutuhan</span> <span class="w hl ru" style="--i:3">rumah,</span><br><span class="w ru" style="--i:4">satu</span> <span class="w ru" style="--i:5">toko</span> <span class="w ru" style="--i:6">lengkap.</span></h1>
+        <p class="ru" style="--i:7">Dari furnitur dan perlengkapan dapur sampai kebersihan, lampu, dan dekorasi. Harga jelas, stok terjaga, dilayani dengan ramah.</p>
+        <div class="hcta ru" style="--i:8"><button class="btn or" id="hCta" data-do="openAuth">Masuk ke Kasir →</button><a class="btn ghost" href="#katalog">Lihat Produk</a></div>
+        <div class="hstats ru" style="--i:9" id="lStats"></div>
+      </div>
+    </div>
+    <div class="hside">
+      <div class="ru" style="--i:5"><div class="scard s1"><small>DAPUR &amp; KEBERSIHAN</small><b>Rapi, bersih, nyaman</b><p>Perlengkapan dapur dan kebersihan untuk rumah sehari-hari.</p><a href="#katalog" data-do="lcat" data-a='["Dapur"]'>Lihat produk →</a><span class="semo">🍳</span></div></div>
+      <div class="ru" style="--i:7"><div class="scard s2"><small>FURNITUR &amp; KAMAR TIDUR</small><b>Nyaman untuk istirahat</b><p>Kursi, lemari, kasur, dan perlengkapan kamar tidur.</p><a href="#katalog" data-do="lcat" data-a='["Furnitur"]'>Lihat produk →</a><span class="semo">🛏️</span></div></div>
+    </div>
+  </section>
+
+  <div class="tick" aria-hidden="true"><div class="tk" id="lTick"></div></div>
+
+  <div class="wrap feats" id="lFeats"></div>
+
+  <section class="wrap" id="kategori">
+    <div class="sh rv"><h2>Belanja per Kategori</h2></div>
+    <div class="cgrid" id="lCT"></div>
+  </section>
+
+  <section class="wrap" id="terlaris">
+    <div class="sh rv"><h2 id="lBestT">Produk Terlaris</h2></div>
+    <div class="pgrid" id="lBest"></div>
+  </section>
+
+  <section class="wrap">
+    <div class="wsl rv">
+      <div><span class="pill">GROSIR &amp; RESELLER</span><h2>Beli banyak, <em>harga lebih miring</em></h2><p>Cocok untuk kos-kosan, kontrakan, penginapan, dan usaha. Hubungi kami untuk harga grosir.</p><a class="btn or" id="lWa" href="#" target="_blank" rel="noopener noreferrer" style="display:inline-block;text-decoration:none">Hubungi via WhatsApp</a></div>
+      <div class="wem" aria-hidden="true"><span>📦</span><span>🪑</span><span>🧺</span></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="katalog">
+    <div class="sh rv"><h2 id="lKatT">Katalog Produk</h2></div>
+    <div class="pgrid" id="lKat"></div>
+    <div style="text-align:center;margin-top:18px"><button class="btn hide" id="lMore" data-do="lMore"></button></div>
+    <p class="note" style="text-align:center">Harga dan sisa stok diperbarui langsung oleh admin. Tekan "+ Keranjang" untuk memesan: barang ditahan atas nama Anda selama 24 jam, lalu diproses admin.</p>
+  </section>
+
+  <section class="wrap" id="ulasan">
+    <div class="sh rv"><h2>Ulasan Pelanggan</h2><div class="rvhead"><span id="lRvSum"></span><button class="btn p" data-do="rvForm">Tulis ulasan</button></div></div>
+    <div class="tgrid" id="lTesti"></div>
+  </section>
+
+  <section class="wrap hide" id="lokasi">
+    <div class="sh rv"><h2>Lokasi Toko</h2></div>
+    <div id="lMap"></div>
+  </section>
+
+  <footer class="foot"><div class="wrap" id="lFoot"></div></footer>
+
+  <div class="fabs" id="fabs">
+    <button class="fab bot" data-do="botOpen" aria-label="Chat dengan admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></button>
+    <button class="fab cart" data-do="cartOpen" aria-label="Buka keranjang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.2l2.1 10.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.1L20 8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="16.5" cy="19.5" r="1.3"/></svg><b id="fabCount" class="hide">0</b></button>
+  </div>
+  <div id="vroot"></div>
+</div>
+
+<!-- ================= LOGIN / BUAT AKUN (popup) ================= -->
+<div id="amask" class="amask hide" data-do="authBg"><div class="abox" id="abox"></div></div>
+
+<!-- ================= APLIKASI (khusus staf yang sudah login) ================= -->
+<div id="app" class="hide">
+  <aside>
+    <div class="logo"><i></i><div><b id="storeName">Toko</b><div class="mut">Sistem Kasir v15</div></div></div>
+    <nav id="nav"></nav>
+    <div class="uinfo" style="margin-top:auto"><div class="uav" data-do="go" data-a='["profil"]' title="Buka profil saya"><span class="av" id="uavatar"></span><div class="mut" id="uinfo"></div></div><button class="btn" style="width:100%" data-do="askLogout">Keluar</button></div>
+  </aside>
+  <main><div class="top"><h2 id="title"></h2><span class="uactions"><span class="net" id="net"></span><button class="btn s p hide" id="inst" data-do="installApp">Pasang aplikasi</button><span class="mut" id="clock"></span><button class="btn s" data-do="pwForm">Sandi</button><button class="btn s d" data-do="askLogout">Keluar</button></span></div><div id="view"></div></main>
+</div>
+<div id="rcpt"></div>
+<div id="mroot"></div>
+<div id="croot"></div>
+<div id="upd" class="toast hide">Versi baru tersedia <button class="btn s p" id="updbtn" style="margin-left:8px">Perbarui</button></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

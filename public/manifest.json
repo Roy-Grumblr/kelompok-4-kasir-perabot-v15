@@ -1,0 +1,17 @@
+{
+  "name": "Toko Perabotan POS",
+  "short_name": "Kasir Perabot",
+  "description": "Aplikasi kasir, stok, dan dashboard toko perabotan rumah tangga",
+  "lang": "id",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0d4a3e",
+  "theme_color": "#0d4a3e",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
